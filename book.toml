@@ -1,0 +1,6 @@
+[book]
+authors = ["Chris Bolin"]
+language = "en"
+multilingual = false
+src = "src"
+title = "euler-university"
