@@ -7,3 +7,6 @@ title = "Euler University"
 
 [build]
 build-dir = "docs/"
+
+[output.html]
+mathjax-support = true
