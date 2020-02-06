@@ -3,4 +3,7 @@ authors = ["Chris Bolin"]
 language = "en"
 multilingual = false
 src = "src"
-title = "euler-university"
+title = "Euler University"
+
+[build]
+build-dir = "docs/"

@@ -8,8 +8,8 @@
   "license": "MIT",
   "scripts": {
     "start": "yarn serve & yarn watch-build & fg",
-    "watch-build": "nodemon . -x \"mdbook build\" -w src/ -e md",
-    "serve": "serve book/"
+    "watch-build": "nodemon . -x \"mdbook build\" -w ./ -e md,toml",
+    "serve": "serve docs/"
   },
   "prettier": {
     "proseWrap": "always"
