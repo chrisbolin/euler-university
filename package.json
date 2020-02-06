@@ -7,9 +7,9 @@
   "author": "Chris Bolin <bolin.chris@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "start": "yarn serve & yarn watch-build & fg",
     "watch-build": "nodemon . -x \"mdbook build\" -w src/ -e md",
-    "serve": "serve book/",
-    "build": "mdbook build"
+    "serve": "serve book/"
   },
   "devDependencies": {
     "nodemon": "^2.0.2",
