@@ -11,6 +11,9 @@
     "watch-build": "nodemon . -x \"mdbook build\" -w src/ -e md",
     "serve": "serve book/"
   },
+  "prettier": {
+    "proseWrap": "always"
+  },
   "devDependencies": {
     "nodemon": "^2.0.2",
     "serve": "^11.3.0"
