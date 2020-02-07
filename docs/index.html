@@ -157,23 +157,35 @@
 the natural numbers from 1 to 999 and sum them if they meet the criteria. This
 solution's execution time would scale linearly with the number of numbers to
 evaluate. We could state this a little more formally in Big O notionation.</p>
-<pre><code>T(n) = O(n)
-</code></pre>
+<p>\[ T(n) = O(n) \]</p>
 <p>This solution may be acceptable for small numbers, but we might want to be more
 creative as n grows. Let's look at summations.</p>
 <h2><a class="header" href="#summations" id="summations">Summations</a></h2>
-<p>Consider the sum, <em>S</em>, of the digits 1 through 9.</p>
-<p>\[ S = \sum_{i=1}^{9} i \]</p>
+<p>Consider the sum of the digits 1 through 9.</p>
+<p>\[ S_9 = \sum_{i=1}^{9} i \]</p>
 <p>Enumerate the digits and group them so that each group has the same sum.</p>
-<p>\[ S = 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 \]</p>
-<p>\[ S = (1 + 9) + (2 + 8) + (3 + 7) + (4 + 6) + 5 \]</p>
-<p>\[ S = 10 + 10 + 10 + 10 + 5 \]</p>
-<p>\[ S = 4 \cdot 10 + 5 \]</p>
-<p>\[ S = \cfrac{9 \cdot 10}{2} \]</p>
-<p>\[ S = \cfrac{9 \cdot (9 + 1)}{2} \]</p>
-<p>We won't prove it here, but this finding can be generalized.</p>
-<p>\[ \sum_{i=1}^{n} i = \cfrac{n \cdot (n + 1)}{2} \]</p>
+<p>\[ S_9 = 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 \]</p>
+<p>\[ S_9 = (1 + 9) + (2 + 8) + (3 + 7) + (4 + 6) + 5 \]</p>
+<p>\[ S_9 = 10 + 10 + 10 + 10 + 5 \]</p>
+<p>\[ S_9 = 4 \cdot 10 + 5 \]</p>
+<p>\[ S_9 = \cfrac{9 \cdot 10}{2} \]</p>
+<p>\[ S_9 = \cfrac{9 (9 + 1)}{2} \]</p>
+<p>We won't prove it here, but this finding can be generalized. The sum of the
+first <em>n</em> whole numbers, 1 through <em>n</em>, is</p>
+<p>\[ S_n = \sum_{i=1}^{n} i = \cfrac{n (n + 1)}{2}. \]</p>
+<p>We're now very close to a constant-time, \( T(n) = O(1) \), solution. Notice
+that the formula for \( S*n \) does not grow in complexity as <em>n</em> grows. The
+number of opperations is the same: an addition, a multiplication, and a
+division.</p>
 <h2><a class="header" href="#constant-time-solution" id="constant-time-solution">Constant-time solution</a></h2>
+<p>In this problem we need to sum the multiples of 3 and 5. As is, our formula for
+\( S_n \) cannot handle multiples. Let's consider a sum of the first 10 even
+numbers. This could be represented as</p>
+<p>\[ S_{10,\mathrm{even}} = \sum_{i=1}^{n} 2 i = 2 \sum_{i=1}^{n} i = 2 \cdot
+\cfrac{n (n + 1)}{2}. \]</p>
+<p>The case will be similar for mutiples of 3 and 5. We simply need to see <em>how
+many</em> mutiples of 3 and 5 should be added. And make sure you don't double count
+numbers that are a multiple of both 3 and 5!</p>
 
                     </main>
 
