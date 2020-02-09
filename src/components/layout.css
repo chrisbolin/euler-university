@@ -1,0 +1,18 @@
+html {
+  font-family: "iowan old style", serif;
+}
+
+body {
+  margin: 0;
+}
+
+main,
+footer {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+footer {
+  text-align: center;
+  margin-top: 3rem;
+}

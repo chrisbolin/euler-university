@@ -1,21 +1,37 @@
 {
   "name": "euler-university",
-  "version": "1.0.0",
+  "private": true,
   "description": "Lessons in Computer Science and Math from Project Euler",
-  "main": "false",
-  "repository": "git@github.com:chrisbolin/euler-university.git",
+  "version": "1.0.0",
   "author": "Chris Bolin <bolin.chris@gmail.com>",
-  "license": "MIT",
+  "repository": "git@github.com:chrisbolin/euler-university.git",
   "scripts": {
-    "start": "yarn serve & yarn watch-build & fg",
-    "watch-build": "nodemon . -x \"mdbook build\" -w ./ -e md,toml",
-    "serve": "serve docs/"
+    "build": "gatsby clean && gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
   },
-  "prettier": {
-    "proseWrap": "always"
+  "dependencies": {
+    "gatsby": "^2.19.7",
+    "gatsby-image": "^2.2.39",
+    "gatsby-plugin-manifest": "^2.2.39",
+    "gatsby-plugin-offline": "^3.0.32",
+    "gatsby-plugin-react-helmet": "^3.1.21",
+    "gatsby-plugin-sharp": "^2.4.3",
+    "gatsby-remark-katex": "^3.1.24",
+    "gatsby-source-filesystem": "^2.1.46",
+    "gatsby-transformer-remark": "^2.6.50",
+    "gatsby-transformer-sharp": "^2.3.13",
+    "katex": "^0.11.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^5.2.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.2",
-    "serve": "^11.3.0"
-  }
+    "prettier": "^1.19.1"
+  },
+  "license": "MIT"
 }
