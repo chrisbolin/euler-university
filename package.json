@@ -9,8 +9,9 @@
     "build": "gatsby clean && gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
+    "start": "yarn run develop",
     "serve": "gatsby serve",
+    "publish": "yarn build && mkdir docs/ && cp -r public/* docs/",
     "clean": "gatsby clean"
   },
   "dependencies": {
