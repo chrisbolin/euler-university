@@ -6,12 +6,12 @@
   "author": "Chris Bolin <bolin.chris@gmail.com>",
   "repository": "git@github.com:chrisbolin/euler-university.git",
   "scripts": {
-    "build": "gatsby clean && gatsby build",
+    "build": "gatsby clean && gatsby build --prefix-paths",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "yarn run develop",
-    "serve": "gatsby serve",
-    "publish": "yarn build && mkdir docs/ && cp -r public/* docs/",
+    "serve": "npx serve public/",
+    "publish": "yarn build && mkdir -p docs/ && cp -r public/* docs/",
     "clean": "gatsby clean"
   },
   "dependencies": {
@@ -32,7 +32,8 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
-    "prettier": "^1.19.1"
+    "prettier": "^1.19.1",
+    "serve": "^11.3.0"
   },
   "license": "MIT"
 }
