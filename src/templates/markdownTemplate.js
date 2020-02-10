@@ -1,27 +1,22 @@
-import React from "react"
-import { graphql } from "gatsby"
+import React from "react";
+import { graphql } from "gatsby";
 
-import Layout from "../components/layout"
+import Layout from "../components/layout";
 
-import "katex/dist/katex.min.css"
-import SEO from "../components/seo"
-
-function title(frontmatter, path) {
-  if (frontmatter.title) return frontmatter.title
-  return `Problem ${path.match(/\d+/)}`
-}
+import "katex/dist/katex.min.css";
+import SEO from "../components/seo";
 
 export default function MarkdownTemplate({ data, path }) {
-  const { markdownRemark } = data // data.markdownRemark holds your post data
-  const { frontmatter, html } = markdownRemark
-  const pageTitle = title(frontmatter, path)
+  const { markdownRemark } = data; // data.markdownRemark holds your post data
+  const { frontmatter, html } = markdownRemark;
+  const { title } = frontmatter;
   return (
     <Layout>
-      <SEO title={pageTitle} />
-      <h1>{pageTitle}</h1>
+      <SEO title={title} />
+      <h1>{title}</h1>
       <div dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
-  )
+  );
 }
 export const pageQuery = graphql`
   query($path: String!) {
@@ -33,4 +28,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
