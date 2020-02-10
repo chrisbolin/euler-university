@@ -4,7 +4,7 @@ module.exports = {
     description: `Lessons in Computer Science and Math from Project Euler.`,
     author: `Chris Bolin`
   },
-  pathPrefix: "/euler-university",
+  pathPrefix: `/euler-university`,
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
@@ -37,7 +37,7 @@ module.exports = {
     {
       resolve: `gatsby-transformer-remark`,
       options: {
-        plugins: [`gatsby-remark-katex`]
+        plugins: [`gatsby-remark-katex`, `gatsby-remark-smartypants`]
       }
     }
   ]
